@@ -3,9 +3,6 @@ layout: post
 ---
 
 
-
-# Upper/lower bound 
-
 > cpp 의 이진탐색 함수 
 
 항상 헷갈려서 정리합니다. 
