@@ -1,5 +1,5 @@
 module.exports = {
-  title: `힝구힝구`,
+  title: `Hello!`,
   description: `Blog posted about me`,
   author: `[jungin]`,
   introduction: `안녕하세요`,

@@ -52,7 +52,7 @@
     "typography-theme-github": "^0.16.19"
   },
   "devDependencies": {
-    "date-fns": "^2.4.0",
+    "date-fns": "^2.4.1",
     "eslint": "^6.4.0",
     "eslint-plugin-react": "^7.14.3",
     "fs-extra": "^8.1.0",

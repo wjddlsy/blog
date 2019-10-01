@@ -12,7 +12,7 @@ const CONTENTS_DIR = '/content/blog'
 const TARGET_DIR = `${cwd}${CONTENTS_DIR}`
 const IGNORE_DIR = 'images'
 const UTF_8 = 'utf8'
-const DATE_FORMAT = 'YYYY-MM-DD HH:MM:SS'
+const DATE_FORMAT = 'yyyy-MM-dd HH:MM:SS'
 
 const ignoreFunc = (file, stats) =>
   stats.isDirectory() && path.basename(file) == IGNORE_DIR
@@ -118,7 +118,7 @@ const fetchTitle = async category => {
   return title
 }
 
-module.exports = (async function() {
+module.exports = (async function () {
   const date = dateFns.format(new Date(), DATE_FORMAT)
 
   log.info('Create new post:: ', date)
