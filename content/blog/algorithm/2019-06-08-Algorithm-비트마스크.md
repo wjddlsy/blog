@@ -16,6 +16,10 @@ category: algorithm
 int full = (1<<n)-1;
 ```
 
+$1111_2 = 10000_2 - 1$
+
+
+
 #### 2. 원소 추가 
 
 ```cpp 
@@ -49,5 +53,42 @@ int removed = (a&~b);
 int toggled = (a^b);
 ```
 
-- 모든 부분 집합 순회하기 
-- 
+
+
+#### 7. 집합의 크기 구하기 
+
+```cpp
+int bitCount(int x) {
+  if(x==0) return 0; 
+  return x%2 + bitCount(x/2);
+}
+
+// 또는 gcc 에서 제공하는 함수 사용 
+int bitCount(int x) {
+  return __builtin_popcount(x);
+}
+```
+
+#### 8. 최소 원소 찾기 
+
+```cpp
+int minimum = __builtin_ctz(x);
+
+// 최하위 비트 직접 구하기 
+int firstTopping = (topping & -toppings);
+```
+
+#### 9. 최소 원소 지우기 
+
+```cpp
+toppings &= (toppings - 1);
+```
+
+
+
+#### 10. 모든 부분 집합 순회하기 
+
+```cpp
+for(int subset = pizza; subset; subset=((subset-1) & pizza))
+```
+
