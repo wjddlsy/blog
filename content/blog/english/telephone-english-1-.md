@@ -24,6 +24,4 @@ category: english
 
 5. 주말에 시험을 봤고 꽤 잘본 것 같아서 기분이 좋다. 
 
-   I took a test on last Sunday and I think I did very well on the test. I feel good.
-
-   > 이렇게 해도 되나? 
+   I took a test on last Sunday and I think I do very well on the test. I feel good.
