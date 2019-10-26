@@ -197,19 +197,86 @@ for(int i=m-1; i>=0; --i) {
 
 ### 5. Support distances up to representations
 
+한 정점과 그 그래프 (정점이 속한 집합)을 대표하는 정점과의 거리를 구하는데 사용할 수 있다. 
+
+경로 압축을 안쓰면 재귀적으로 거리를 구해야해서 비효율적이다. 경로 압축을 사용하면 각 노드에 부모까지의 거리를 추가적으로 저장함으로써 거리를 구할 수 있다. 
+
+```cpp
+void make_set(int v) {
+  parent[v] = {v, 0};
+  rank[v] = 0; 
+}
+
+pair<int, int> find_set(int v) {
+  if(v!=parent[v].first) {
+    int len = parent[v].second;
+    parent[v] = find_set(parent[v].first);
+    parent[v].second += len;
+  }
+  return parent[v];
+}
+
+void union_sets(int a, int b) {
+  a = find_set(a).first; 
+  b = find_set(b).first; 
+  if(a!=b) {
+    if(rank[a]<rank[b])
+      swap(a, b);
+    parent[b] = {a, 1};
+    if(rank[a] == rank[b])
+      rank[a]++;
+  }
+}
+```
+
+
+
 ### 6. Support the parity of the path length / Checking bipartiteness online 
 
-부모까지 경로 길이를 구할 때, 
+루트까지 길이를 저장하는 것처럼 루트 전의 경로 길이의 parity를 유지할 수 있다.  뭔소린지 모르겠음 
 
 ### 7. Offline RMQ in $O(\alpha (n))$ on average / Arpa's trick
 
+배열 `a[]` 가 주어졌을 때 부분 배열에서 최솟값을 구해야한다. 
+
+유니온 파인드로 이걸 어떻게 해? 
+
+```cpp
+struct Query {
+  int L, R, idx;
+};
+
+vector<int> answer; 
+vector<vector<Query>> container; 
+
+stack<int> s; 
+for (int i=0; i<n; ++i) {
+  while(!s.empty() && a[s.top] > a[i]) {
+    parent[s.top()] = i;
+    s.pop();
+  }
+  s.push(i);
+  for (Query q:container[i]) {
+    answer[q.idx] = a[find_set(q.L)];
+  }
+}
+```
+
+이 접근 방법은 오프라인으로만 작동한다. 즉, 모든 쿼리를 미리 알고 있어야 한다. 
+
 ### 8. Offline LCA in $O(\alpha (n))$ on average 
+
+> https://cp-algorithms.com/graph/lca_tarjan.html
+
+
 
 ### 9. Storing the Union Find explicitly in a set list / Applications of this idea when merging various data structures 
 
+
+
 ### 10. Storing the Union Find by maintaing a clear tree structure / Online bridge finding in $O(\alpha (n))$ on average 
 
-
+> https://cp-algorithms.com/graph/bridge-searching-online.html
 
 
 
