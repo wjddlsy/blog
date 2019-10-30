@@ -60,3 +60,16 @@ category: english
    >
    > A. Same old. 늘 똑같아요.
 
+10. 45분째 기다리고 있어~ 
+
+    I've been waiting for over 45 minutes. 
+
+11. 여기서 10분 거리에 있어. 
+
+    It's just ten miniutes from here 
+
+12. 24번이 몇 시에 올 예정인가요?
+
+    Do you know what time the Number 24 is due? 
+
+    > Due! 
