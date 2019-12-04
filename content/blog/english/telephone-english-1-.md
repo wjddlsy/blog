@@ -73,3 +73,13 @@ category: english
     Do you know what time the Number 24 is due? 
 
     > Due! 
+
+13. How many days would you like the vehicle for? 
+
+    차량이 며칠 동안이나 필요하세요? 
+
+14. 내일은 더 추워. 
+
+    It's supposed to be colder tomorrow.
+
+    > It's supposed to be cold. 
